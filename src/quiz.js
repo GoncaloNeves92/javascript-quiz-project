@@ -40,4 +40,25 @@ class Quiz {
         };
 
     };
+
+    filterQuestionsByDifficulty(difficulty) {
+        if (difficulty < 3 || difficulty > 1) {
+            return this.questions = this.questions.filter((question) => {
+                return question.difficulty === difficulty
+            })
+        }
+    }
+
+    averageDifficulty() {
+        const total = this.questions.reduce((acc, currentQuestion) => {
+            return acc + currentQuestion.difficulty;
+        }, 0);
+
+        const average = (total / this.questions.length)
+
+        return average
+    }
 }
+
+
+//console.log(quiz.averageDifficulty())
