@@ -28,8 +28,10 @@ class Quiz {
     }
 
     checkAnswer(answer) {
-        if (this.answer === true);
-        return this.correctAnswers += 1;
+        const currentQuestion = this.getQuestion();
+        if (currentQuestion.answer ===  answer) {
+            this.correctAnswers++;
+        } ;
     }
 
     hasEnded() {
